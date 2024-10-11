@@ -18,6 +18,24 @@ app.use(cors(corsOptions))
 app.get('/', (req, res) => {
   res.send('ok')
 })
+
+app.get('/productos', (req, res) => {
+    const productos= [ 
+      {
+        nombre: "lavarropas",
+        precio: "30000.-"
+      },
+      {
+        nombre: "camara",
+        precio: "30000.-"
+      },
+      {
+        nombre: "queso",
+        precio: "30000.-"
+      }
+    ]
+      res.json(productos)
+  })
 //! arranque, serv
 app.listen(PORT, (err) => {
     if (err) throw new Error(`No se pudo levantar el servidor -> ${err}`)
